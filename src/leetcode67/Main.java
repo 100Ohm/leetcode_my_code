@@ -1,5 +1,7 @@
 package leetcode67;
 
+import javafx.util.Pair;
+
 /**
  * 给定两个二进制字符串，返回他们的和（用二进制表示）。
  *
@@ -14,9 +16,28 @@ package leetcode67;
  */
 public class Main {
     public static void main(String[] args) {
+        System.out.println(addBinary("1010", "1011"));
 
     }
     public static String addBinary(String a, String b) {
-        return null;
+        if(a.isEmpty() ^ b.isEmpty())
+            return a.isEmpty() ? b : a;
+        StringBuilder sb = new StringBuilder();
+        int p = 1;//迭代位置
+        int plus = 0;//进位
+        while(true) {
+            if(a.length() - p < 0 && b.length() - p < 0) {
+                if(plus != 0)
+                    sb.append("1");
+                break;
+            }
+            int n1 = a.length() - p >= 0 ? a.charAt(a.length() - p) - '0' : 0;
+            int n2 = b.length() - p >= 0 ? b.charAt(b.length() - p) - '0' : 0;
+            int sum = n1 + n2 + plus;
+            plus = sum / 2;
+            sb.append(Integer.toString(sum % 2));
+            p++;
+        }
+        return sb.reverse().toString();
     }
 }
