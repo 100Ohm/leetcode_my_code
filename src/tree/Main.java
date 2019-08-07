@@ -24,6 +24,7 @@ public class Main {
         List<String> list = new ArrayList<>();
         firstOrderTraversal(root, list);
         System.out.println(list);
+//        ThreadLocal
     }
 
     static class TreeNode {

@@ -16,7 +16,7 @@ import javafx.util.Pair;
  */
 public class Main {
     public static void main(String[] args) {
-        System.out.println(addBinary("1010", "1011"));
+        System.out.println(addBinary("11", "11"));
 
     }
     public static String addBinary(String a, String b) {

@@ -13,7 +13,7 @@ public class Main {
         System.out.println(Arrays.toString(num));
     }
     public static void moveZeroes(int[] nums) {
-        int k = 0;//用于表示当前的非0数组填充位置
+        int k = 0;//用于表示当前的非0数字填充位置
         for(int i = 0;i < nums.length;i++){
             if(nums[i] != 0){
                 swap(nums,i,k++);

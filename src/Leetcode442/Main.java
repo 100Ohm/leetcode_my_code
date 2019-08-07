@@ -36,11 +36,12 @@ class Solution {
 //        return ans;
 //    }
 
+    //不用额外空间
     public List<Integer> findDuplicates(int[] nums) {
         List<Integer> ans = new ArrayList<>();
         int j = 0;
         while(j < nums.length) {// 将数字移动到对应的下标位置
-            if(nums[nums[j] - 1] != nums[j]) {//交换过之后，当前元素可能没有比较过
+            if(nums[nums[j] - 1] != nums[j]) {//交换过之后，当前元素可能没有比较过，所以不用j++
                 swap(nums, nums[j] - 1, j);
             } else {
                 j ++;
